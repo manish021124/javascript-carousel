@@ -49,16 +49,17 @@ function leftNext(){
 
 function jumpNext(c){
     document.body.style.backgroundImage = images[c];
+    nextValue = c;
 }
 
 function moveNext(){
-    id = setInterval(next, 3000);
+    setInterval(next, 3000);
+}
 
-    function next(){
-        nextValue += 1;
-        document.body.style.backgroundImage = images[nextValue];
-        if(nextValue >= images.length){
-            nextValue = -1;
-        }
+function next(){
+    nextValue += 1;
+    document.body.style.backgroundImage = images[nextValue];
+    if(nextValue >= images.length){
+        nextValue = -1;
     }
 }
